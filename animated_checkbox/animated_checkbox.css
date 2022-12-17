@@ -1,0 +1,131 @@
+:root{
+    --color-background:#b3c6f1;
+    --color-green-border:#88cf8f;
+    --color-green-background:#8bc34a;
+    --color-red-background:#c34a4a;
+    --color-check-close:#ffff;
+    /*  Sizes  */
+    --toggle-width:7em;
+    --toggle-height:3em;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    background: var(--color-background);
+}
+
+.animated_checkbox *:before,
+.animated_checkbox *:after {
+    content: "";
+    position: absolute;
+}
+
+.animated_checkbox .toggle {
+    position: relative;
+    display: inline-block;
+    margin-left: 42%;
+    margin-top: 20%;
+}
+
+.animated_checkbox input {
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+}
+
+.animated_checkbox label.toggleitem {
+    width: var(--toggle-width);
+    height: var(--toggle-height);
+    background-color: #2e394d;
+    display: inline-block;
+    border-radius: 50px;
+    margin: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+    transform-origin: 20% center;
+    cursor: pointer;
+}
+
+.animated_checkbox label.checkbox::before {
+    display: block;
+    transition: all 0.2s ease;
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    border-radius: 2em;
+    border: 2px solid var(--color-green-border);
+    transition: 0.3s ease;
+}
+
+.animated_checkbox .toggle label::before {
+    content: none;
+}
+
+.animated_checkbox .toggle .check {
+    border-radius: 50%;
+    width: calc(var(--toggle-height) * 0.8);
+    height: calc(var(--toggle-height) * 0.8);
+    position: absolute;
+    background: var(--color-green-background);
+    transition: 0.4s ease;
+    top: calc(var(--toggle-height) * 0.1);
+    left: calc(var(--toggle-height) * 0.1);
+}
+
+.animated_checkbox .toggle .check::before,
+.animated_checkbox .toggle .check::after {
+    height: 4px;
+    border-radius: 10px;
+    background: var(--color-check-close);
+    transition: 0.4s ease;
+}
+
+.animated_checkbox .toggle .check::before {
+    width: calc(var(--toggle-height) * 0.50);
+    transform: rotate(-45deg)
+               translate(
+                        calc(var(--toggle-height) * -0.10),
+                        calc(var(--toggle-height) * 0.44)
+                        );
+}
+
+.animated_checkbox .toggle .check::after {
+    width: calc(var(--toggle-height) * 0.20);
+    transform: rotate(45deg)
+               translate(
+                        calc(var(--toggle-height) * 0.462),
+                        calc(var(--toggle-height) * 0.205)
+                        );
+}
+
+.animated_checkbox #checkbox:checked + label .check {
+    left: calc(var(--toggle-width) * 0.62);
+    transform: rotate(360deg);
+    background: var(--color-red-background);
+}
+
+.animated_checkbox #checkbox:checked + label .check::before {
+    width: calc(var(--toggle-height) * 0.6);
+    transform: rotate(-45deg)
+               translate(
+                        calc(var(--toggle-height) * -0.16),
+                        calc(var(--toggle-height) * 0.32)
+                        );
+}
+
+
+.animated_checkbox #checkbox:checked + label .check::after {
+    width: calc(var(--toggle-height) * 0.6);
+    transform: rotate(45deg)
+               translate(
+                        calc(var(--toggle-height) * 0.32),
+                        calc(var(--toggle-height) * 0.16)
+                        );
+}

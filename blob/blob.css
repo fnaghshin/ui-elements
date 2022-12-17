@@ -46,7 +46,7 @@ html,body{
     border: 2px solid var(--border-color);
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
     transition: 0.5s;
-    animation: rotate-blob 4s linear infinite;
+    animation: rotate-blob2 4s linear infinite;
 }
 .blob-effect:hover span:nth-child(2){
     background-color: var(--item2-color);
@@ -61,7 +61,7 @@ html,body{
     border: 2px solid var(--border-color);
     border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
     transition: 0.5s;
-    animation: rotate-blob2 10s linear infinite;
+    animation: rotate-blob 10s linear infinite;
 }
 .blob-effect:hover span:nth-child(3){
     background-color: var(--item3-color);
@@ -74,12 +74,12 @@ html,body{
     }
 
     100% {
-        transform: rotate(365deg);
+        transform: rotate(355deg);
     }
 }
 @keyframes rotate-blob2 {
     0% {
-        transform: rotate(365deg);
+        transform: rotate(355deg);
     }
 
     100% {
